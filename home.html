@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-2"></div>
+        <div class="col-sm-12 col-md-8">
+            <div class="row">
+                <div class="col-sm-12 col-md-2"></div>
+                <div class="col-sm-12 col-md-8">
+                    <div class="md-form">
+                        <input type="text" id="inputEx" class="form-control" ng-model="search">
+                        <label for="inputEx">Cari</label>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-2"></div>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Price</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="cars in records | filter : search">
+                            <td>{{cars.Id}}</td>
+                            <td>{{cars.Brand}}</td>
+                            <td>{{cars.Model}}</td>
+                            <td>{{cars.Price}}</td>
+                            <td><a href="#!/edit/{{ cars.$id }}" class="btn btn-sm btn-success"><i class="fa fa-pencil"></i></a>
+                            <a href="" ng-click="removeData(cars)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-2"></div>
+    </div>
+</div>
